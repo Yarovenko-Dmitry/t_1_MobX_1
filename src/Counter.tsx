@@ -8,6 +8,7 @@ export const Counter: FC = observer(() => {
     return (
         <div className='counter'>
             <div> {`Counter : ${counter.count}`}</div>
+            <div> {counter.total}</div>
             <div className='buttons'
             >
                 <button className='btn' onClick={() => counter.increment()}>+</button>
