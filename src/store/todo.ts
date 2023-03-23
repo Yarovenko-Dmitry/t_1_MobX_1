@@ -1,6 +1,6 @@
 import {makeAutoObservable} from "mobx";
 
-type TodoType = { id: number; title: string; completed: boolean; }
+type TodoType = { id: number; title: string; completed: boolean; userId?: number }
 
 class Todo {
     todos: TodoType[] = [
@@ -17,14 +17,24 @@ class Todo {
         this.todos.push(newTodo)
     }
 
-    removeTodo(id: number | string) {
+    removeTodo(id: number) {
         this.todos = this.todos.filter(todo => todo.id !== id)
         console.log('removeTodo id :', id)
     }
 
-    completeTodo(id: number | string) {
+    completeTodo(id: number) {
         this.todos = this.todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo)
         console.log('completeTodo id :', id)
+    }
+
+    fetchTodos() {
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response => response.json())
+            .then(json => {
+                this.todos = [
+                    ...this.todos, ...json
+                ]
+            })
     }
 }
 
