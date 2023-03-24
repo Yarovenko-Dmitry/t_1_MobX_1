@@ -10,7 +10,10 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
-    'standard-with-typescript'
+    'standard-with-typescript',
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/react"
   ],
   overrides: [],
   parserOptions: {
@@ -18,7 +21,13 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'react'
+    'react',
+    '@typescript-eslint',
+    'prettier'
   ],
-  rules: {}
+  rules: {
+    "require-jsdoc": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/ban-types": "off"
+  }
 }
