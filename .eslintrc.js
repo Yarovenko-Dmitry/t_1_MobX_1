@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
   extends: [
     'plugin:@typescript-eslint/recommended',
@@ -11,23 +11,17 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
     'standard-with-typescript',
-    "plugin:prettier/recommended",
-    "prettier",
-    "prettier/react"
+    'plugin:prettier/recommended',
   ],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'prettier'
-  ],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
-    "require-jsdoc": "off",
-    "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/ban-types": "off"
-  }
-}
+    'require-jsdoc': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/ban-types': 'off',
+  },
+};
