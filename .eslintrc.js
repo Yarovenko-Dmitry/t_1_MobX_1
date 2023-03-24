@@ -4,11 +4,15 @@ module.exports = {
     es2021: true
   },
   extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:react/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
     'standard-with-typescript'
   ],
-  overrides: [
-  ],
+  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
@@ -16,6 +20,5 @@ module.exports = {
   plugins: [
     'react'
   ],
-  rules: {
-  }
+  rules: {}
 }
