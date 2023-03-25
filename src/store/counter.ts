@@ -1,26 +1,25 @@
-import {makeAutoObservable} from "mobx";
+import { makeAutoObservable } from 'mobx';
 
 class Counter {
-    count = 0
-    timer = 60
+  count = 0;
 
-    constructor() {
-        makeAutoObservable(this)
-    }
+  timer = 60;
 
-    increment() {
-        this.count = this.count + 1
-    }
+  constructor() {
+    makeAutoObservable(this);
+  }
 
-    decrement() {
-        this.count = this.count - 1
-    }
+  increment() {
+    this.count += 1;
+  }
 
-    get total() {
-        return `Count + timer = ${this.count + this.timer}`
-    }
+  decrement() {
+    this.count -= 1;
+  }
+
+  get total() {
+    return `Count + timer = ${this.count + this.timer}`;
+  }
 }
 
-export const counter = new Counter()
-
-
+export const counter = new Counter();
